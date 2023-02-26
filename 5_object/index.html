@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Javascript lecture template</title>
+    <title>5. Object</title>
     <meta charset="utf-8" />
     <meta
       name="viewport"
@@ -12,21 +12,44 @@
   </head>
 
   <body>
-    <h1>Javascript lecture</h1>
-    <h2>初めに</h2>
+    <h1>5. オブジェクト</h1>
     <h3>
-      javascriptはブラウザで動作する言語です. <br />
-      今回はgoogle chromeでデバッグしながらjavascriptを学びます. <br />
-      「開発者ツール」を使うことで, コードのデバッグがしやすくなります.
+      オブジェクトではデータをプロパティ名(キー)と値のペアで管理します.<br />
+      下記のように、{}で囲うことで記述します.
     </h3>
+    <h4>
+      const user = { <br />
+      name: "yuki", <br />
+      age: 30 <br />
+      }
+    </h4>
     <h3>
-      <font color="blue"> Ctrl + Shift + J</font
-      >を押すことでで開発者ツールが開きます.
+      オブジェクトではプロパティ名を指定することで値を取り出すことができます.
+      <br />
+      プロパティ名を指定する方法は下記のブラケット記法とドット記法があります.
     </h3>
-    <h3>
-      開発者ツールの「コンソール」に"Hello,
-      world!"の文字が表示されていると思います。<br />
-      このようにjavascriptで記述されたコードの結果を表示することで、デバッグをしていきます。
-    </h3>
+    <h4>
+      console.log(user["name"]) <br />
+      >> yuki <br />
+      console.log(user.age) <br />
+      >> 30
+    </h4>
+    <h3>オブジェクトには配列や関数を格納することもできます。</h3>
+    <h4>
+      const user = { <br />
+      name: "yuki", <br />
+      age: 30 <br />
+      hobby: ["釣り", "キャンプ"] <br />
+      getAge: function(){ <br />
+      &nbsp; &nbsp; return this.age <br />
+      &nbsp; } <br />
+      }
+    </h4>
+    <h4>
+      console.log(user.hobby[0]) <br />
+      >> 釣り <br />
+      console.log(user.getAge()) <br />
+      >> 30
+    </h4>
   </body>
 </html>
