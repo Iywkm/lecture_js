@@ -13,14 +13,36 @@
 
   <body>
     <h1>2. 変数</h1>
-    <h2>
-      <font color="blue"> Ctrl + Shift + J</font
-      >を押すことでで開発者ツールが開きます.
-    </h2>
-    <h2>javascriptはブラウザで動作します.</h2>
-    <h2>
-      開発者ツールの「コンソール」を使うことで,
-      コードのデバッグがしやすくなります.
-    </h2>
+    <h2>定義方法</h2>
+    <h3>・const</h3>
+    <h4>
+      constは変更不可な変数を定義できる.<br />
+      例. <br />
+      const name = "yuki"; <br />
+      上書きしようとするとエラーが出る. <br />
+      例. <br />
+      name = "test"; <br />
+      <font color="red">TypeError: Assignment to constant variable.</font>
+    </h4>
+    <h3>・let</h3>
+    <h4>
+      letは変更可能な変数を定義できる. <br />
+      例. <br />
+      let age = 30; <br />
+      age = 31; <br />
+      age = 32;
+    </h4>
+    <h3>・var</h3>
+    <h4>
+      変数の古い定義方法. <br />
+      letよりも緩い宣言であり、スコープの概念がないため極力使わないほうが良い.
+      <br />
+      (スコープに関しては後述)
+    </h4>
+    <h2>四則演算</h2>
+    <h4>
+      四則演算の演算子は[+, -, *,/]を使う. <br />
+      基本的にはpython等と違いはない.
+    </h4>
   </body>
 </html>

@@ -13,14 +13,65 @@
 
   <body>
     <h1>3. 関数</h1>
-    <h2>
-      <font color="blue"> Ctrl + Shift + J</font
-      >を押すことでで開発者ツールが開きます.
-    </h2>
-    <h2>javascriptはブラウザで動作します.</h2>
-    <h2>
-      開発者ツールの「コンソール」を使うことで,
-      コードのデバッグがしやすくなります.
-    </h2>
+    <h2>定義方法</h2>
+    <h3>・functionキーワードでの定義</h3>
+    <h4>
+      関数を定義する方法の一つとして、functionキーワードを使った宣言がある.
+      <br />
+      function 関数名(引数1, 引数2, ...) { <br />
+      &nbsp; &nbsp;処理 <br />
+      &nbsp; &nbsp;return 戻り値 <br />
+      } <br />
+      戻り値がない場合はreturnは省略可能(undefinedがreturnされる).<br />
+      <br />
+      例. <br />
+      function addTen(number) { <br />
+      &nbsp; &nbsp;console.log("The argument is", number); <br />
+      &nbsp; &nbsp;return number + 10; <br />
+      } <br />
+      <br />
+      function greeting() { <br />
+      &nbsp; &nbsp;console.log("hello"); <br />
+      }
+    </h4>
+    <h3>・アロー関数(無名関数)</h3>
+    <h4>
+      functionキーワードを使わない宣言方法. <br />
+      () => { <br />
+      &nbsp; &nbsp;処理 <br />
+      &nbsp; &nbsp;return 戻り値 <br />
+      } <br />
+      <br />
+      処理がない関数の場合は{}を省略して記述できる. <br />
+      () => 戻り値 <br />
+      <br />
+      そのまま定義する場合は名前のない関数として定義されるため、名前をつけたい場合は変数に格納する必要がある.
+      <br />
+      例. <br />
+      const greeting = () => { <br />
+      &nbsp; &nbsp;console.log("hello"); <br />
+      }
+    </h4>
+    <h2>関数の呼び出し</h2>
+    <h4>
+      引数が必要な関数は、下記のように呼び出す. <br />
+      関数名（引数, ...) <br />
+      例. <br />
+      addTen(5); <br />
+      <br />
+      引数がない場合は下記のようになる. <br />
+      関数名（）<br />
+      例. <br />
+      greeting(); <br />
+      <br />
+      関数からの戻り値を変数に格納する場合 <br />
+      const answer = addTen(5); <br />
+      console.log(answer); <br />
+      >> 15 <br />
+      <br />
+      関数の戻り値を関数の引数として渡すことも可能. <br />
+      console.log(addTen(5)); <br />
+      >> 15
+    </h4>
   </body>
 </html>

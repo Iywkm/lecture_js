@@ -7,9 +7,9 @@
 
 // --python-- name = "yuki"
 
-const name = "";
+const name = "yuki";
 //constは上書き不可のため、下記はエラーが出ます。
-//name = "yuki";
+// name = "test";
 
 let age = 30;
 // letは上書き可能な変数です。

@@ -13,14 +13,39 @@
 
   <body>
     <h1>4. 配列</h1>
-    <h2>
-      <font color="blue"> Ctrl + Shift + J</font
-      >を押すことでで開発者ツールが開きます.
-    </h2>
-    <h2>javascriptはブラウザで動作します.</h2>
-    <h2>
-      開発者ツールの「コンソール」を使うことで,
-      コードのデバッグがしやすくなります.
-    </h2>
+    <h4>
+      配列は複数の変数を一つの変数にインデックス（順番）と紐づけて保管できる
+    </h4>
+    <h2>定義方法</h2>
+    <h4>
+      []で囲うことで記述できる. <br />
+      const instructors = ["Kimiko", "Yan", "Dustin", "Dylan"]; <br />
+      const numbers = [1, 2, 3, 5, 7];
+    </h4>
+    <h2>要素の取り出し</h2>
+    <h4>
+      配列の要素を取り出すにはインデックスを指定する. <br />
+      インデックスは0から始まる. <br />
+      console.log(numbers[2]); <br />
+      >> 3 <br />
+      console.log(numbers[0]); <br />
+      >> 1
+    </h4>
+    <h2>プロパティ</h2>
+    <h4>
+      配列の要素数は.lengthでアクセスできる.これをプロパティと呼ぶ. <br />
+      console.log(numbers.length - 1, "5"); <br />
+      console.log(numbers[numbers.length - 1], "7"); <br />
+    </h4>
+    <h2>メソッド</h2>
+    <h4>
+      配列にはあらかじめメソッドが用意されている. <br />
+      メソッドを使いこなすことで、配列の要素を取り除いたり、追加したりする操作が楽に行える.
+      <br />
+      どんなメソッドがあるか調べてみましょう！(<a
+        href="https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Array"
+        >MDN</a
+      >)
+    </h4>
   </body>
 </html>
