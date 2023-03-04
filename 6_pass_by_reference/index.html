@@ -1,32 +1,278 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Javascript lecture template</title>
+    <title>6. pass_by_reference</title>
     <meta charset="utf-8" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
     <meta name="theme-color" content="#000000" />
+    <link rel="stylesheet" href="style.css" type="text/css" />
     <script type="text/javascript" src="script.js"></script>
   </head>
 
   <body>
-    <h1>Javascript lecture</h1>
-    <h2>初めに</h2>
-    <h3>
-      javascriptはブラウザで動作する言語です. <br />
-      今回はgoogle chromeでデバッグしながらjavascriptを学びます. <br />
-      「開発者ツール」を使うことで, コードのデバッグがしやすくなります.
-    </h3>
-    <h3>
-      <font color="blue"> Ctrl + Shift + J</font
-      >を押すことでで開発者ツールが開きます.
-    </h3>
-    <h3>
-      開発者ツールの「コンソール」に"Hello,
-      world!"の文字が表示されていると思います。<br />
-      このようにjavascriptで記述されたコードの結果を表示することで、デバッグをしていきます。
-    </h3>
+    <h1>6. 値渡しと参照渡し</h1>
+    <h2>プリミティブ型</h2>
+    <div>
+      プリミティブ型に該当するのは、数値、文字列、ブーリアン、undefined、null.
+      <h3>・プリミティブ型の値を代入した場合、</h3>
+    </div>
+    <div>
+      数値10が保管され、その場所が変数aに格納される. <br />
+      let a = 10;
+    </div>
+    <div class="figure-container">
+      <div class="variables">
+        <div class="variable">変数 a P1</div>
+      </div>
+      <div class="arrows">
+        <div class="arrow">→</div>
+      </div>
+      <div class="boxes">
+        <div class="box">
+          <label class="box-name">P1</label>
+          <div class="box-value">10</div>
+        </div>
+      </div>
+    </div>
+    <div>
+      aに20を代入すると、20が新しく別の場所に保管され、その場所がaに格納される.
+      <br />
+      a = 20;
+    </div>
+    <div class="figure-container">
+      <div class="variables">
+        <div class="blank"></div>
+        <div class="variable">変数 a P2</div>
+      </div>
+      <div class="arrows">
+        <div class="blank"></div>
+        <div class="arrow">→</div>
+      </div>
+      <div class="boxes">
+        <div class="box">
+          <label class="box-name">P1</label>
+          <div class="box-value">10</div>
+        </div>
+        <div class="box">
+          <label class="box-name">P2</label>
+          <div class="box-value">20</div>
+        </div>
+      </div>
+    </div>
+    <h3>・複数の変数に同じ値を代入した場合、</h3>
+    <div>
+      値が複数の場所に保管され、aとbにはそれぞれ別の場所が格納される. <br />
+      let a = 10; <br />
+      let b = 10;
+    </div>
+    <div class="figure-container">
+      <div class="variables">
+        <div class="variable">変数 a P1</div>
+        <div class="variable">変数 b P2</div>
+      </div>
+      <div class="arrows">
+        <div class="arrow">→</div>
+        <div class="arrow">→</div>
+      </div>
+      <div class="boxes">
+        <div class="box">
+          <label class="box-name">P1</label>
+          <div class="box-value">10</div>
+        </div>
+        <div class="box">
+          <label class="box-name">P2</label>
+          <div class="box-value">10</div>
+        </div>
+      </div>
+    </div>
+    <h3>・変数に別の変数を代入する場合</h3>
+    <div>
+      aに保管場所が格納された後、bにはaと同じ場所が格納される. <br />
+      let a = 10; <br />
+      let b = a;
+    </div>
+    <div class="figure-container">
+      <div class="variables">
+        <div class="variable">変数 a P1</div>
+        <div class="variable">変数 b P1</div>
+      </div>
+      <div class="arrows">
+        <div class="arrow">→</div>
+        <div class="arrow">↗</div>
+      </div>
+      <div class="boxes">
+        <div class="box">
+          <label class="box-name">P1</label>
+          <div class="box-value">10</div>
+        </div>
+      </div>
+    </div>
+    <div>
+      bだけ変更すると<br />
+      新しい保管場所が作られ、新しい場所がbに格納される. <br />
+      b = 20;
+    </div>
+    <div class="figure-container">
+      <div class="variables">
+        <div class="variable">変数 a P1</div>
+        <div class="variable">変数 b P2</div>
+      </div>
+      <div class="arrows">
+        <div class="arrow">→</div>
+        <div class="arrow">→</div>
+      </div>
+      <div class="boxes">
+        <div class="box">
+          <label class="box-name">P1</label>
+          <div class="box-value">10</div>
+        </div>
+        s
+        <div class="box">
+          <label class="box-name">P2</label>
+          <div class="box-value">20</div>
+        </div>
+      </div>
+    </div>
+    <div>
+      プリミティブ型の値を代入する場合は、一時的に複数の変数が同じ値を参照することはあるが、変数に対する操作が別の変数が参照している値に影響を与えることはない.
+      <br />
+      これを値渡しという.
+    </div>
+    <h2>オブジェクト型</h2>
+    <div>
+      オブジェクト型とはプリミティブ型以外のもので、配列やオブジェクト、関数など.
+      <h3>・変数に値を代入した後で別の値を代入する場合</h3>
+    </div>
+    <div>
+      let a = [10, 20];<br />
+      配列[10,20]が保管され、その場所が変数aに格納される.
+    </div>
+    <div class="figure-container">
+      <div class="variables">
+        <div class="variable">変数 a P1</div>
+      </div>
+      <div class="arrows">
+        <div class="arrow">→</div>
+      </div>
+      <div class="boxes">
+        <div class="box">
+          <label class="box-name">P1</label>
+          <div class="box-value">[10, 20]</div>
+        </div>
+      </div>
+    </div>
+    <div>
+      a = 20;
+      <br />
+      新しく[30,
+      40]を代入すると、新しく別の場所に保管され、その場所がaに格納される.
+    </div>
+    <div class="figure-container">
+      <div class="variables">
+        <div class="blank"></div>
+        <div class="variable">変数 a P2</div>
+      </div>
+      <div class="arrows">
+        <div class="blank"></div>
+        <div class="arrow">→</div>
+      </div>
+      <div class="boxes">
+        <div class="box">
+          <label class="box-name">P1</label>
+          <div class="box-value">[10, 20]</div>
+        </div>
+        <div class="box">
+          <label class="box-name">P2</label>
+          <div class="box-value">[30, 40]</div>
+        </div>
+      </div>
+    </div>
+    <div>
+      a[0] = 50;
+      <br />
+      aが参照している配列に対してインデックス0の要素を50に置き換える.
+      <br />
+      この場合、aに格納されている場所は変化しない.
+    </div>
+    <div class="figure-container">
+      <div class="variables">
+        <div class="blank"></div>
+        <div class="variable">変数 a P2</div>
+      </div>
+      <div class="arrows">
+        <div class="blank"></div>
+        <div class="arrow">→</div>
+      </div>
+      <div class="boxes">
+        <div class="box">
+          <label class="box-name">P1</label>
+          <div class="box-value">[10, 20]</div>
+        </div>
+        <div class="box">
+          <label class="box-name">P2</label>
+          <div class="box-value">[<font color="red">50</font>, 40]</div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <h3>・変数に別の変数を代入する場合</h3>
+      let a, b; <br />
+      a = [10, 20]; <br />
+      b = a;
+      <br />
+      配列[10,20]が保管され、その場所が変数aに格納される.
+      <br />
+      次に変数aに格納されている場所が変数bに格納される.
+    </div>
+    <div class="figure-container">
+      <div class="variables">
+        <div class="variable">変数 a P1</div>
+        <div class="variable">変数 b P1</div>
+      </div>
+      <div class="arrows">
+        <div class="arrow">→</div>
+        <div class="arrow">↗</div>
+      </div>
+      <div class="boxes">
+        <div class="box">
+          <label class="box-name">P1</label>
+          <div class="box-value">[10, 20]</div>
+        </div>
+      </div>
+    </div>
+    <div>
+      b[0] = 50;
+      <br />
+      bが参照している配列に対してインデックス0の要素を50に置き換える.
+      <br />
+      この場合、aおよびbに格納されている場所は変化しない. <br />
+      つまり、変数bに対する操作が変数aが参照している値にも影響する.
+    </div>
+    <div class="figure-container">
+      <div class="variables">
+        <div class="variable">変数 a P1</div>
+        <div class="variable">変数 b P1</div>
+      </div>
+      <div class="arrows">
+        <div class="arrow">→</div>
+        <div class="arrow">↗</div>
+      </div>
+      <div class="boxes">
+        <div class="box">
+          <label class="box-name">P1</label>
+          <div class="box-value">[<font color="red">50</font>, 20]</div>
+        </div>
+      </div>
+    </div>
+    <div>
+      オブジェクト型の値を変数に代入する場合、一時的に複数の変数が同じ値を参照することがある点はプリミティブ型の場合と同じ.
+      <br />
+      その時に例えば変数が参照している配列の要素を置き換えるなどの操作を行うと、変数に対する操作が別の変数が参照している値に影響を与えることになる.
+      <br />
+      これを参照渡しという.
+    </div>
   </body>
 </html>

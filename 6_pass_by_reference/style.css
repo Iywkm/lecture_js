@@ -1,0 +1,46 @@
+.figure-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.variables,
+.arrows,
+.boxes {
+  display: flex;
+  flex-direction: column;
+}
+
+.variable {
+  border: 2px solid black;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin-top: 0.5rem;
+}
+
+.arrow {
+  padding: 1rem;
+  padding-left: 2rem;
+  margin-top: 0.5rem;
+}
+
+.box {
+  display: flex;
+  flex-direction: row;
+  margin-top: 0.5rem;
+}
+
+.box-name,
+.box-value {
+  padding: 1rem;
+}
+
+.box-value {
+  border: 2px solid black;
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+
+.blank {
+  height: 3.5rem;
+  margin-top: 0.5rem;
+}
