@@ -15,11 +15,7 @@ function test(actual, expected) {
 }
 
 function sumArray(arrayOfNumbers) {
-  let sum = 0;
-  for (const number of arrayOfNumbers) {
-    sum += number;
-  }
-  return sum;
+  // write your code
 }
 
 // 次の関数は何度呼び出しても期待どおりに動作するはずです
@@ -30,7 +26,7 @@ test(sumArray([100, 200, 300]), 600);
 let count = 0;
 
 function counter(x) {
-  return (count += x);
+  // write your code
 }
 
 test(counter(3), 3);

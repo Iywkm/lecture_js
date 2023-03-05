@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Javascript lecture template</title>
+    <title>8. Comparisons</title>
     <meta charset="utf-8" />
     <meta
       name="viewport"
@@ -12,21 +12,37 @@
   </head>
 
   <body>
-    <h1>Javascript lecture</h1>
-    <h2>初めに</h2>
-    <h3>
-      javascriptはブラウザで動作する言語です. <br />
-      今回はgoogle chromeでデバッグしながらjavascriptを学びます. <br />
-      「開発者ツール」を使うことで, コードのデバッグがしやすくなります.
-    </h3>
-    <h3>
-      <font color="blue"> Ctrl + Shift + J</font
-      >を押すことでで開発者ツールが開きます.
-    </h3>
-    <h3>
-      開発者ツールの「コンソール」に"Hello,
-      world!"の文字が表示されていると思います。<br />
-      このようにjavascriptで記述されたコードの結果を表示することで、デバッグをしていきます。
-    </h3>
+    <h1>8. 条件分岐</h1>
+    <div>
+      if文を使って条件を評価した結果に応じて、異なる処理を実行できる. <br />
+      記述方法は下記.
+    </div>
+    <div>
+      if (条件式) { <br />
+      &nbsp; &nbsp;条件式がtrueの場合の処理 <br />
+      }
+    </div>
+    <div>
+      この場合は、条件式がtrueの場合はブロック内の処理が実行され、falseの場合はブロック内はスキップされ次の処理に移る.
+    </div>
+    <h3>条件式がfalseの時の処理(if..else)</h3>
+    <div>
+      if (条件式) { <br />
+      &nbsp; &nbsp;条件式がtrueの場合の処理 <br />
+      } else { <br />
+      &nbsp; &nbsp;条件式がfalseの時の処理 <br />
+      }
+    </div>
+    <div>
+      この場合は条件式がtrueの時はifの直後のブロックの処理が、falseの場合はelseの直後の処理がそれぞれ実行される.
+    </div>
+    <h3>ブロックの{}を省略する記述</h3>
+    <div>実行する処理が一つの文だけだった場合は{}を省略することができる.</div>
+    <div>
+      if (条件式) <br />
+      &nbsp; &nbsp;条件式がtrueの場合の処理 <br />
+      else <br />
+      &nbsp; &nbsp;条件式がfalseの時の処理
+    </div>
   </body>
 </html>

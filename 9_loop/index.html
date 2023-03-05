@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Javascript lecture template</title>
+    <title>9. Loop</title>
     <meta charset="utf-8" />
     <meta
       name="viewport"
@@ -12,21 +12,105 @@
   </head>
 
   <body>
-    <h1>Javascript lecture</h1>
-    <h2>初めに</h2>
-    <h3>
-      javascriptはブラウザで動作する言語です. <br />
-      今回はgoogle chromeでデバッグしながらjavascriptを学びます. <br />
-      「開発者ツール」を使うことで, コードのデバッグがしやすくなります.
-    </h3>
-    <h3>
-      <font color="blue"> Ctrl + Shift + J</font
-      >を押すことでで開発者ツールが開きます.
-    </h3>
-    <h3>
-      開発者ツールの「コンソール」に"Hello,
-      world!"の文字が表示されていると思います。<br />
-      このようにjavascriptで記述されたコードの結果を表示することで、デバッグをしていきます。
-    </h3>
+    <h1>9. 繰り返し処理</h1>
+    <h3>・for文の基本形</h3>
+    <div>
+      for文は指定した回数だけ繰り返し処理を実施する. <br />
+      記述方法は下記.
+    </div>
+    <div>
+      for (初期化式; 条件式; 変化式){ <br />
+      &nbsp; &nbsp;実行する処理1; <br />
+      &nbsp; &nbsp;実行する処理2; <br />
+      }
+    </div>
+    <div>
+      例. <br />
+      for (let i = 0; i < 3; i++){ <br />
+      &nbsp; &nbsp;console.log("i=" + i) <br />
+      } <br />
+      console.log("end") <br />
+      <br />
+      >> i=0 <br />
+      >> i=1 <br />
+      >> i=2 <br />
+      >> end
+    </div>
+    <br />
+    <div>
+      また、if文と同様に繰り返し実行する処理が一つの場合は{}を省略できる.
+    </div>
+    <div>
+      for (初期化式; 条件式; 変化式) <br />
+      &nbsp; &nbsp;実行する処理;
+    </div>
+    <h3>・while文</h3>
+    <div>while文は条件式がtrueの間だけ処理を実行する.</div>
+    <div>
+      while (条件式){ <br />
+      &nbsp; &nbsp;実行する処理1 <br />
+      &nbsp; &nbsp;実行する処理2 <br />
+      }
+    </div>
+    <div>
+      例. <br />
+      let x = 0 <br />
+      while (x < 3){ <br />
+      &nbsp; &nbsp;console.log("x =" + x) <br />
+      &nbsp; &nbsp;x++ <br />
+      } <br />
+      console.log("end") <br />
+      <br />
+      >> x=0 <br />
+      >> x=1 <br />
+      >> x=2 <br />
+      >> end <br />
+    </div>
+    <br />
+    <div>for文と同様に処理が1文の場合は{}を省略可能.</div>
+    <h3>・for...of文</h3>
+    <div>
+      for...of文は配列の要素を順に取得することができる. <br />
+      記述方法は下記.
+    </div>
+    <div>
+      for (変数名&nbsp;of&nbsp;配列){ <br />
+      &nbsp; &nbsp;実行する処理1; <br />
+      &nbsp; &nbsp;実行する処理2; <br />
+      }
+    </div>
+    <div>
+      例. <br />
+      const array = [1, 2, 3] <br />
+      for (const&nbsp;el&nbsp;of&nbsp;array){ <br />
+      &nbsp; &nbsp;console.log("element=" + el); <br />
+      } <br />
+      <br />
+      >> element=1 <br />
+      >> element=2 <br />
+      >> element=3 <br />
+    </div>
+    <h3>・for...in文</h3>
+    <div>
+      for...in文はオブジェクトのプロパティを順に取得することができる. <br />
+      記述方法は下記.
+    </div>
+    <div>
+      for (変数名&nbsp;in&nbsp;オブジェクト){ <br />
+      &nbsp; &nbsp;実行する処理1; <br />
+      &nbsp; &nbsp;実行する処理2; <br />
+      }
+    </div>
+    <div>
+      例. <br />
+      const object = {"jan": 1,"feb": 2 ,"mar": 3} <br />
+      for (const&nbsp;key&nbsp;in&nbsp;object){ <br />
+      &nbsp; &nbsp;console.log("object." + key + "=" + object[key]); <br />
+      } <br />
+      <br />
+      >> object.jan=1 <br />
+      >> object.feb=2 <br />
+      >> object.mar=3 <br />
+    </div>
   </body>
 </html>
